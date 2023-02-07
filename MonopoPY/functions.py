@@ -1,6 +1,10 @@
-def start_game():
-    pass
-    pass
+import settings
+import boxes
+
+def initialize_board():
+    for num in range(40):
+        pass
+
 
 
 
