@@ -1,3 +1,4 @@
+#settings.py
 class Box :
     def __init__(self, name, cost, color, kind):
         self.name = name
@@ -6,9 +7,15 @@ class Box :
         self.kind = kind
 
 class Player :
-    def __init__(self, name, status) :
-        self.name
+    def __init__(self, name) :
+        self.name = name
         self.status = 0
         self.balance = 1500
-    #a player can trow dice, buy, auction
-    #a player has to be somewhere in a Box
+        self.story = [0]
+
+    def reset_player() : 
+        Player.status = 0
+        Player.balance = 1500
+        Player.story = [0]
+        return print('success!')
+        
