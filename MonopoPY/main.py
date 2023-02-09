@@ -1,7 +1,8 @@
-import functions as fnc
-import settings as s
-#fnc.initialize_board()
+import game 
 
-p1 = s.Player('test1')
+game.create_players() #llamar a un jugador test
 
-fnc.roll_dice(p1)
+print('player named ' + game.players[0].name + ' says NMIX CHANGE UP LETS GO BIG WAVE -> LET"S ROLL THE DICE YOOOOOOOOOOOO')
+game.players[0].roll_dices()
+game.players[0].roll_dices()
+game.players[0].roll_dices()
