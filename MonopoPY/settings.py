@@ -1,11 +1,13 @@
 import random
 
 class Box :
-    def __init__(self, name, cost, color, kind):
+    def __init__(self, name, cost, color, kind, place, owner):
         self.name = name
         self.cost = cost
         self.color = color
         self.kind = kind
+        self.place = place
+        self.owner = owner
 
 class Player :
     def __init__(self, name) :
@@ -25,4 +27,3 @@ class Player :
         player.balance = 1500
         player.story = [0]
         return print('success!',player.story)
-        
