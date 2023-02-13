@@ -1,10 +1,9 @@
 import settings as s
 import boxes
 
-players = []
-
 def new_game() :
     create_players()
+    print('Game Ready')
 
 def create_players() :
     n_players = input('How many players?: ')
@@ -20,5 +19,17 @@ def create_players() :
     for n in range(int(n_players)) :
         player = input('Name of the player ' + str(n + 1) + ' ')
         player = s.Player(str(player))
-        players.append(player)
-    return [print(player.name) for player in players]
+
+def play() :
+    playable = True
+    while playable == True :
+        instruction = input('Instruction :')
+        if instruction == 'end':
+            playable = False
+            break
+        elif instruction == 'dice':
+            s.Player.player_instances[0].roll_dices()
+            print('dados')
+            pass
+        else:
+            break
