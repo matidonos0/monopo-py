@@ -4,6 +4,7 @@ import boxes
 def new_game() :
     create_players()
     print('Game Ready')
+    #create who throws first
 
 def create_players() :
     n_players = input('How many players?: ')
@@ -33,5 +34,8 @@ def play() :
                 s.Player.player_instances[turn].roll_dices()
                 print('dados de : ' + s.Player.player_instances[turn].name)
                 pass
+            #elif instruction == 'story':
+            #    print(s.Player.player_instances[turn].story)
+            #    pass
             else:
                 break
