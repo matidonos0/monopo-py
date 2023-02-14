@@ -23,13 +23,15 @@ def create_players() :
 def play() :
     playable = True
     while playable == True :
-        instruction = input('Instruction :')
-        if instruction == 'end':
-            playable = False
-            break
-        elif instruction == 'dice':
-            s.Player.player_instances[0].roll_dices()
-            print('dados')
-            pass
-        else:
-            break
+        for turn in range(0, len(s.Player.player_instances)) :
+            instruction = input('Instruction :')
+            if instruction == 'end':
+                playable = False
+                break
+            elif instruction == 'dice':
+                #create turns like for and rotate the player instance
+                s.Player.player_instances[turn].roll_dices()
+                print('dados de : ' + s.Player.player_instances[turn].name)
+                pass
+            else:
+                break

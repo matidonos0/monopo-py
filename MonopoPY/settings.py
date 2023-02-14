@@ -10,10 +10,9 @@ class Box :
         self.kind = kind
         self.place = place
         self.owner = owner
-        self.box_instances.append(self)
+        Box.box_instances.append(self)
 
 class Player :
-    #counter isnt working
     player_count = 0
     player_instances = []
 
@@ -22,8 +21,8 @@ class Player :
         self.status = 0
         self.balance = 1500
         self.story = [0]
-        self.player_count += 1
-        self.player_instances.append(self)
+        Player.player_instances.append(self)
+        Player.player_count += 1
 
     def roll_dices(player) :
         throw = random.randint(1, 6) + random.randint(1, 6)
