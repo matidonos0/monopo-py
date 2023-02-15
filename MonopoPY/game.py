@@ -27,12 +27,15 @@ def play() :
         for turn in range(0, len(s.Player.player_instances)) :
             instruction = input('Instruction :')
             if instruction == 'end':
-                playable = False
+                playable = False # then endgame function
                 break
             elif instruction == 'dice':
                 #create turns like for and rotate the player instance
                 s.Player.player_instances[turn].roll_dices()
-                print('dados de : ' + s.Player.player_instances[turn].name)
+                player_place = s.Player.player_instances[turn].status
+                current_box = s.Box.box_instances[player_place - 1]
+                print('Dices from : ' + s.Player.player_instances[turn].name)
+                print('You are in : ' + current_box.name + ' and the owner is : ' + str(current_box.owner)) # if owner none then function
                 pass
             #elif instruction == 'story':
             #    print(s.Player.player_instances[turn].story)
