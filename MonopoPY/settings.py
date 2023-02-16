@@ -19,9 +19,9 @@ class Player :
     def __init__(self, name) :
         self.name = name
         self.status = 1 #ubication in the board
-        self.balance = 1500
-        self.story = [0]
-        self.total_laps = 0
+        self.balance = 1500 #money
+        self.story = [0] #where has the player been
+        self.total_laps = 0 #laps around the board
         Player.player_instances.append(self)
         Player.player_count += 1
 
@@ -32,6 +32,7 @@ class Player :
             player.status = player.status - 40
             player.balance += 200
             player.total_laps += 1
+            player.story.append(player.status)
         else :
             player.story.append(player.status)
         return print(throw, player.status, player.total_laps)

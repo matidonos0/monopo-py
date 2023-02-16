@@ -27,15 +27,25 @@ def play() :
         for turn in range(0, len(s.Player.player_instances)) :
             instruction = input('Instruction :')
             if instruction == 'end':
-                playable = False # then endgame function
+                playable = False #then endgame function
                 break
             elif instruction == 'dice':
-                #create turns like for and rotate the player instance
                 s.Player.player_instances[turn].roll_dices()
                 player_place = s.Player.player_instances[turn].status
                 current_box = s.Box.box_instances[player_place - 1]
                 print('Dices from : ' + s.Player.player_instances[turn].name)
-                print('You are in : ' + current_box.name + ' and the owner is : ' + str(current_box.owner)) # if owner none then function
+                print('You are in : ' + current_box.name + ' and the owner is : ' + str(current_box.owner))
+                if current_box.owner == None :
+                    print('---------')
+                    print('This property has no owner, you can buy it or itll get auctioned ')
+                    print('\n')
+                    box_decision = input('Please choose buy or auction...')
+                    if box_decision == 'buy' :
+                        print('you bought the property')
+                        pass
+                    elif box_decision == 'auction':
+                        print('The property will get auctioned')
+                        pass
                 pass
             #elif instruction == 'story':
             #    print(s.Player.player_instances[turn].story)
