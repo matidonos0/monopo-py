@@ -1,5 +1,5 @@
-import settings
-import boxes
+import settings as settings
+import boxes as boxes
 
 def start_game() :
     #crear tablero

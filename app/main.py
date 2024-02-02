@@ -1,5 +1,5 @@
-import game 
-import boxes
+import game
+import boxes as boxes
 
 game.new_game()
 game.play()

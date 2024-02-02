@@ -1,5 +1,5 @@
 import settings as s
-import boxes
+import boxes as boxes
 
 def new_game() :
     create_players()
